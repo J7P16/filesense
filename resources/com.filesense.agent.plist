@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  FileSense Launch Agent
+
+  Install to ~/Library/LaunchAgents/com.filesense.agent.plist
+  to start the indexing daemon at login.
+
+  Commands:
+    launchctl load   ~/Library/LaunchAgents/com.filesense.agent.plist
+    launchctl unload ~/Library/LaunchAgents/com.filesense.agent.plist
+    launchctl list | grep filesense
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.filesense.agent</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Applications/FileSense.app/Contents/MacOS/FileSense</string>
+        <string>--background</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <key>LowPriorityBackgroundIO</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/filesense.stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/filesense.stderr.log</string>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+</dict>
+</plist>

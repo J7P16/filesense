@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  FileSense Entitlements
+
+  Required permissions:
+    - Files & Folders: read access to user documents
+    - Accessibility: for global hotkey when app is not focused
+    - Network (local): for IPC between Tauri shell and Python sidecar
+-->
+<plist version="1.0">
+<dict>
+    <!-- Allow reading user-selected folders -->
+    <key>com.apple.security.files.user-selected.read-only</key>
+    <true/>
+
+    <!-- Allow reading Downloads folder -->
+    <key>com.apple.security.files.downloads.read-only</key>
+    <true/>
+
+    <!-- Network client (for local IPC to Python sidecar) -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+
+    <!-- Network server (Python sidecar listens on localhost) -->
+    <key>com.apple.security.network.server</key>
+    <true/>
+
+    <!-- Allow spawning the Python sidecar subprocess -->
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+
+    <!-- Hardened runtime with exceptions for Python -->
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+</dict>
+</plist>

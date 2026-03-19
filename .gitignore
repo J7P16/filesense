@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+*.so
+
+# Rust / Tauri
+src-tauri/target/
+
+# Node
+node_modules/
+.svelte-kit/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# FileSense data (local dev)
+*.lance/
+*.db
+*.sqlite
+
+# Environment
+.env
+.env.local
+
+# Model cache (large files)
+# The sentence-transformers model will be in ~/.cache/
+src-tauri/binaries/
+src-tauri/binaries/
+src-python/dist/
+src-python/build/
+*.spec
+src-tauri/binaries/
+src-tauri/target/
+src-python/dist/
+src-python/build/
+src-python/.venv/
+*.spec
+node_modules/
+src-tauri/binaries/
+src-tauri/target/
+src-python/dist/
+src-python/build/
+src-python/.venv/
+*.spec
+node_modules/

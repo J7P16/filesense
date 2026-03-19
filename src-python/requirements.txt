@@ -1,0 +1,41 @@
+# FileSense Python Dependencies
+# ================================
+
+# --- Core Framework ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.9.0
+pydantic-settings>=2.5.0
+
+# --- Embedding Models ---
+sentence-transformers>=3.3.0
+torch>=2.4.0               # CPU-only; see README for Apple Silicon MPS
+openai>=1.50.0              # Optional: cloud embedding fallback
+
+# --- Vector Database ---
+lancedb>=0.13.0
+pyarrow>=17.0.0
+
+# --- Metadata Database ---
+aiosqlite>=0.20.0
+
+# --- File Watching ---
+watchdog>=5.0.0
+
+# --- Text Extraction ---
+PyMuPDF>=1.24.0             # PDF extraction (fast, reliable)
+python-docx>=1.1.0          # Word documents
+python-pptx>=1.0.0          # PowerPoint files
+openpyxl>=3.1.0             # Excel spreadsheets
+chardet>=5.2.0              # Encoding detection for text files
+python-magic>=0.4.27        # MIME type detection
+
+# --- Text Processing ---
+tiktoken>=0.7.0             # Token counting for chunking
+langdetect>=1.0.9           # Language detection (optional)
+
+# --- Utilities ---
+rich>=13.8.0                # CLI progress bars during indexing
+structlog>=24.4.0           # Structured logging
+tenacity>=9.0.0             # Retry logic for cloud API calls
+xxhash>=3.5.0               # Fast file hashing for change detection
